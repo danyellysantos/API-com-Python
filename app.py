@@ -19,6 +19,12 @@ livros =[
         'autor': 'James Clear'
 
     },
+    {
+        'id': 4,
+        'titulo': 'Hábitos Gerai',
+        'autor': 'James'
+
+    },
 ]
 
 # Consultar (todos)
