@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
+#array 
 livros =[
     {
         'id': 1,
@@ -64,4 +65,16 @@ def excluir_livro(id):
             del livros[indice]
 
             return jsonify(livros)
+
+@app.errorhandler(404)
+def not_found(e):
+    mensagem = {
+        'status': 404,
+        'mensagem': 'Rota solicitada não encontrada'
+    }
+    return jsonify (mensagem), 404
+
+            
+#a localhost cria um servidor na porta tcp 5000, tudo o que for web é tcp. 
 app.run(port=5000, host='localhost', debug=True)
+
